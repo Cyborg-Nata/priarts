@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Poppins&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro|Julius+Sans+One|Poiret+One|Questrial|Yellowtail&display=swap');
+
+// Global Style
+body {
+  color: black;
+  font-family: 'Poppins' , sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  width: 940px;
+  position: relative;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 100px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 2;
+  img {
+    width: 100px;
+    padding-top: 10px;
+  }
+  nav {
+    float: right;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    .menu-icons i {
+      display: none;
+    }
+    li {
+      list-style: none;
+      a {
+        height: 50px;
+        line-height: 50px;
+        color: black;
+        padding: 0 20px;
+        text-decoration: none;
+        display: block;
+        text-transform: uppercase;
+        &:hover {
+          color: white;
+          background: rgb(235, 64, 64);
+        }
+      }
+      .navcolor {
+        color: white;
+      }
+    }
+  }
+  .menu-toggle {
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+}
+
+footer {
+  padding: 20px 0;
+  clear: both;
+  img {
+    margin-right: 30px;
+    vertical-align: middle;
+    width: 120px;
+  }
+}
+
+.social {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  li {
+    float: left;
+    margin-left: 25px;
+  }
+  a {
+    height: 32px;
+    width: 32px;
+    display: block;
+    text-indent: -9999px;
+  }
+}
+
+.social a[href*="facebook.com"] {
+  background-image: url(../img/facebook.png);
+}
+
+.social a[href*="twitter.com"] {
+  background-image: url(../img/twitter.png);
+}
+
+.social a[href*="instagram.com"] {
+  background-image: url(../img/instagram.png);
+}
+
+// Style page Index
+.hero {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(135deg, rgba(65, 65, 65, 0.7) 0%, rgba(0, 0, 0, 0.7)
+  100%), url("../img/modelo-um.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 4.7rem;
+    background: url("../img/wave-small.png") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.main-message {
+  width: 100%;
+  max-width: 50rem;
+  color: #fafafa;
+  transform: translateY(25%);
+  h3 {
+    font-size: 1.6rem;
+  }
+  h1 {
+    font-family: 'Questrial', sans-serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin: 1rem 0;
+  }
+}
+.btn {
+  background-color: rgb(235, 64, 64);
+  border-radius: 2rem;
+  color: #fafafa;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  text-transform: uppercase;
+  transition: background-color 650ms;
+  text-decoration: none;
+  &:hover {
+    background-color:rgb(221, 76, 76);
+  }
+}
+
+.panel {
+  margin: 10px 0;
+  width: 100%;
+  ol {
+    text-align: center;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin: 5px;
+      transition: 0.7s ease-out;
+      &:hover {
+        background-color: rgba(221, 221, 221, 0.8);
+        box-shadow: 0 0 5px rgb(97, 97, 97);
+      }
+      img {
+        max-width: 200px;
+      }
+      figcaption {
+        text-align: center;
+      }
+    }
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+    &::after {
+      content: '';
+      width: 220px;
+      height: 3px;
+      background: currentColor;
+      display: block;
+      margin: 10px auto;
+    }
+  }
+  a {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+  }
+  button {
+    float: right;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #eb4040;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    margin-bottom: 10px;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    &:hover {
+      background-color: #393939;
+      box-shadow: 1px 0 20px rgba(192, 192, 192, 0.9);
+      &::after {
+        border-top-color: #393939;
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.news {
+  float: left;
+  width: 50%;
+}
+
+.best-seller {
+  float: right;
+  width: 50%;
+}
+
+// Media query page Index
+@media (max-width: 939px) {
+  .container {
+    width: 96%;
+  }
+
+  .panel {
+    width: auto;
+    li {
+      width: 30%;
+    }
+    img {
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  header {
+    padding: 0 20px;
+    img {
+      float: right;
+    }
+    nav {
+      position: absolute;
+      top: 0px;
+      position: fixed;
+      left: -100%;
+      transition: 0.5s ease-in-out;
+    }
+    ul {
+      display: grid;
+      align-content: center;
+      width: 100%;
+      height: 100vh;
+      background: rgba(12, 12, 12, 0.9);
+      transform: uppercase;
+      li {
+        a {
+          color: white;
+        }
+      }
+      .menu-icons i {
+        font-size: 2.5rem;
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 5px;
+      }
+      .close i {
+        color: #ff004c;
+      }
+    }
+    .active {
+      left: 0;
+    }
+    .menu-toggle {
+      display: block;
+      float: left;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .panel {
+    li {
+      width: 250px;
+      margin: 10px;
+    }
+    img {
+      width: 250px;
+    }
+    figcaption {
+      padding: 10px;
+    }
+  }
+
+  fieldset.size {
+    text-align: center;
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 470px) {
+  .hero::before {
+    height: 9.4rem;
+    background: url("../img/wave-medium.png");
+    background-size: cover;
+  }
+}
+
+// Style Product
+.color {
+  position: relative;
+  padding-top: 80px;
+  label {
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      position: absolute;
+      top: 30px;
+      border: 6px solid rgba(0,0,0,0);
+      transition: 1s;
+      cursor: pointer;
+    }
+    &:hover::after {
+      border: 6px solid rgba(0,0,0,0.1);
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      box-shadow:  0px 0px 1em 5px rgb(219, 219, 219);
+      border-radius: 2%;
+    }
+  }
+  label[for=orange]::after {
+    background-color: #e87946;
+    left: 0;
+  }
+  label[for=black]::after {
+    background-color: rgb(56, 56, 56);
+    left: 60px;
+  }
+  label[for=brown]::after {
+    background-color: #5c3528;
+    left: 120px;
+  }
+  input[type=radio] {
+    display: none;
+  }
+  input:checked + label::after {
+    border: 6px solid rgba(0,0,0,0.3);
+  }
+  input:not(:checked) + label img {
+    display: none;
+  }
+}
+
+.product {
+  color: #333;
+  line-height: 1.3;
+  margin-top: 2em;
+  h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+  p {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 1em;
+    font-family: 'Poppins';
+  }
+  legend {
+    display: block;
+    font: bold 0.9em/2.5 Arial;
+    font-family: 'Alegreya Sans SC';
+    text-transform: uppercase;
+  }
+}
+
+.product-back {
+  background-color: #ffffff;
+  margin-top: 50px;
+  border-top: 2px solid rgb(255, 255, 255);
+}
+
+.buy {
+  background: #30be5b;
+  border: none;
+  color: #333;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  box-shadow: 0 1px 3px #777;
+  display: block;
+  padding: 0.5em 1em;
+  margin-top: 60px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.textBuy {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-family: 'Alegreya Sans SC';
+}
+
+.size output {
+  display: inline-block;
+  height: 44px;
+  width: 44px;
+  line-height: 44px;
+  text-align: center;
+  border: 3px solid #666;
+  border-radius: 50%;
+  color: #555;
+}
+
+.detail {
+  h2 {
+    font-size: 1.5em;
+    text-align: left;
+    font-family: 'Alegreya Sans SC';
+  }
+  p {
+    margin: 1em 0;
+    font-size: 1em;
+    line-height: 1.5;
+    }
+  table {
+    border-spacing: 0.5em;
+    border-collapse: separate;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgba(154, 218, 255, 0.315);
+    thead {
+      background-color: rgb(154, 218, 255);
+      th {
+        font-weight: bold;
+        padding: 0.3em;
+        text-align: center;
+      }
+      td {
+        padding: 0.3em;
+      }
+    }
+  }
+}
+
+// Media query page Product
+@media (min-width: 842px) {
+  .detail {
+    padding: 7em 0;
+  }
+}
+
+@media (min-width: 630px) {
+  .product {
+    position: relative;
+    padding-left: 40%;
+    font-size: 1.2em;
+    fieldset {
+      display: inline-block;
+      vertical-align: top;
+      margin: 1em 0;
+      min-width: 240px;
+      width: 45%;
+    }
+  }
+
+  .color {
+    position: static;
+    padding: 0;
+    label {
+      &::after {
+        position: static;
+        float: left;
+        margin-right: 10px;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 308px;
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .detail {
+    font-size: 1.2em;
+  }
+  .panel {
+    li {
+      display: inline-table;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .detail {
+    width: auto;
+    table {
+      margin: auto;
+      width: 100%;
+    }
+  }
+}
